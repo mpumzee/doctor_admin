@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { createClient } from '@supabase/supabase-js';
@@ -10,7 +11,7 @@ const supabase = createClient(supabaseUrl, supabaseAnonKey);
 @Component({
   selector: 'app-user-registration',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, CommonModule],
   templateUrl: './user-registration.component.html',
   styleUrls: ['./user-registration.component.css',]
 })
