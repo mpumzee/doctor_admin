@@ -67,8 +67,13 @@ export class DashboardComponent implements AfterViewInit {
       return;
     }
 
+    if (!this.selectedProfile) {
+      console.error('No profile selected.');
+      return;
+    }
+
     const prescription = {
-      email: email,
+      email: this.selectedProfile.email,
       medication: formData.get('medication'),
       dosage: formData.get('dosage'),
       frequency: formData.get('frequency'),
