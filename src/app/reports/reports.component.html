@@ -50,4 +50,24 @@
   </div>
 </div>
 
-
+<div class="card mt-4 mx-4">
+  <div class="card-header text-white" style="background-color: rgb(69, 79, 134);">
+    <h3 class="card-title text-center">Booked Dates Calendar</h3>
+  </div>
+  <div class="card-body">
+    <table class="table table-bordered text-center">
+      <thead>
+        <tr>
+          <th *ngFor="let day of ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']">{{ day }}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let week of getCalendar()">
+          <td *ngFor="let date of week" [ngClass]="{'bg-info text-white': isBookedDate(date)}">
+            {{ date ? date.getDate() : '' }}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
