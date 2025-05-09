@@ -75,6 +75,7 @@ export class DashboardComponent implements AfterViewInit {
     const prescription = {
       email: this.selectedProfile.email,
       medication: formData.get('medication'),
+      disease: formData.get('disease'),
       dosage: formData.get('dosage'),
       frequency: formData.get('frequency'),
       duration: formData.get('duration'),
