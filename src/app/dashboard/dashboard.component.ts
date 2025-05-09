@@ -72,6 +72,14 @@ export class DashboardComponent implements AfterViewInit {
       return;
     }
 
+    const doctor_name = (await supabase
+      .from('doctor_profiles')
+      .select('full_name')
+      .eq('email', email)
+      .single()).data?.full_name || ''
+    
+    console.log("Doctor is ..." + doctor_name);
+
     const prescription = {
       email: this.selectedProfile.email,
       medication: formData.get('medication'),
@@ -79,6 +87,9 @@ export class DashboardComponent implements AfterViewInit {
       dosage: formData.get('dosage'),
       frequency: formData.get('frequency'),
       duration: formData.get('duration'),
+      doctor_email: email,
+      doctor_fullname: doctor_name,
+      
     };
 
     const { error } = await supabase

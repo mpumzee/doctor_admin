@@ -6,6 +6,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { AppointmentsComponent } from './appointments/appointments.component';
 import { PrescriptionsComponent } from './prescriptions/prescriptions.component';
 import { ReportsComponent } from './reports/reports.component';
+import { DoctorComponent } from './doctor/doctor.component';
 
 export const routes: Routes = [
   { path: 'register', component: UserRegistrationComponent },
@@ -14,7 +15,8 @@ export const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
   { path: 'appointments', component: AppointmentsComponent },
   { path: 'prescriptions', component: PrescriptionsComponent },
-  { path: 'reports', component: ReportsComponent }
+  { path: 'reports', component: ReportsComponent },
+  { path: 'doctor', component: DoctorComponent }
 
 ];
 
